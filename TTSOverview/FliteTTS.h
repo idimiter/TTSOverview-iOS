@@ -53,4 +53,6 @@
 -(void)stopTalking;
 -(void)setPitch:(float)pitch variance:(float)variance speed:(float)speed;
 -(void)setVoice:(NSString *)voicename;
+-(BOOL)isSpeaking;
+
 @end

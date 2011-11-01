@@ -166,4 +166,9 @@ cst_voice *voice;
 	self.delegate = nil;
 }
 
+-(BOOL)isSpeaking
+{
+	return [audioPlayer isPlaying];
+}
+
 @end
