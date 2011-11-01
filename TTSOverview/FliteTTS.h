@@ -26,6 +26,14 @@
 //  Copyright 2010. All rights reserved.
 //
 
+@protocol FliteTTSDelegate <NSObject>
+
+@optional
+
+- (void)didFinishSpeaking;
+
+@end
+
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -35,10 +43,13 @@
 	AVAudioPlayer* audioPlayer;
 }
 
+@property (nonatomic, retain) id<FliteTTSDelegate> delegate;
+
 +(FliteTTS *)shared;
 
 // Use these:
 -(void)speakText:(NSString *)text;
+-(void)speakText:(NSString *)text withDelegate:(id<FliteTTSDelegate>)speechDelegate;
 -(void)stopTalking;
 -(void)setPitch:(float)pitch variance:(float)variance speed:(float)speed;
 -(void)setVoice:(NSString *)voicename;

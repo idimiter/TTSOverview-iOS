@@ -39,6 +39,8 @@ cst_voice *voice;
 
 @implementation FliteTTS
 
+@synthesize delegate;
+
 +(FliteTTS *)shared {
 	static FliteTTS *shared = nil;
 	static dispatch_once_t onceToken;
@@ -117,6 +119,13 @@ cst_voice *voice;
 	
 }
 
+-(void)speakText:(NSString *)text withDelegate:(id<FliteTTSDelegate>)speechDelegate
+{
+	self.delegate = speechDelegate;
+	
+	[self speakText:text];
+}
+
 -(void)setPitch:(float)pitch variance:(float)variance speed:(float)speed
 {
 	feat_set_float(voice->features,"int_f0_target_mean", pitch);
@@ -146,6 +155,15 @@ cst_voice *voice;
 -(void)stopTalking
 {
 	[audioPlayer stop];
+}
+
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+	if ([self.delegate respondsToSelector:@selector(didFinishSpeaking)]) {
+		[self.delegate didFinishSpeaking];
+	}
+	
+	self.delegate = nil;
 }
 
 @end
