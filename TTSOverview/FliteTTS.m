@@ -58,7 +58,9 @@ cst_voice *voice;
 	// cmu_us_rms
 	// cmu_us_awb
 	// cmu_us_slt
-	[self setVoice:@"cmu_us_awb"];
+	
+	[self setVoice:@"cmu_us_rms"];	// Best Male Voice (IMHO)
+//	[self setVoice:@"cmu_us_slt"];	// Only Female Voice
     return self;
 }
 
