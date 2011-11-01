@@ -39,6 +39,15 @@ cst_voice *voice;
 
 @implementation FliteTTS
 
++(FliteTTS *)shared {
+	static FliteTTS *shared = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		shared = [[FliteTTS alloc] init];
+	});
+	return shared;
+}
+
 -(id)init
 {
     self = [super init];

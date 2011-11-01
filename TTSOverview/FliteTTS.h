@@ -35,6 +35,8 @@
 	AVAudioPlayer* audioPlayer;
 }
 
++(FliteTTS *)shared;
+
 // Use these:
 -(void)speakText:(NSString *)text;
 -(void)stopTalking;
