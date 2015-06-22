@@ -49,6 +49,7 @@
 
 // Use these:
 -(void)speakText:(NSString *)text;
+-(void)speakText2:(NSString *)text;
 -(void)speakText:(NSString *)text withDelegate:(id<FliteTTSDelegate>)speechDelegate;
 -(void)stopTalking;
 -(void)setPitch:(float)pitch variance:(float)variance speed:(float)speed;

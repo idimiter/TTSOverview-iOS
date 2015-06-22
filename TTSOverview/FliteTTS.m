@@ -28,6 +28,7 @@
 
 #import "FliteTTS.h"
 #import "flite.h"
+#include "usenglish.h"
 
 cst_voice *register_cmu_us_kal();
 cst_voice *register_cmu_us_kal16();
@@ -36,6 +37,8 @@ cst_voice *register_cmu_us_awb();
 cst_voice *register_cmu_us_slt();
 cst_wave *sound;
 cst_voice *voice;
+
+cst_lexicon *cmulex_init(void);
 
 @implementation FliteTTS
 
@@ -60,10 +63,26 @@ cst_voice *voice;
 	// cmu_us_rms
 	// cmu_us_awb
 	// cmu_us_slt
-	
+
+
 	[self setVoice:@"cmu_us_rms"];	// Best Male Voice (IMHO)
 //	[self setVoice:@"cmu_us_slt"];	// Only Female Voice
+
+
+	// For flitevox files
+	NSString* dirPath = [[NSBundle mainBundle] resourcePath];
+	flite_add_lang("eng", usenglish_init, cmulex_init);
+	flite_voice_list = cons_val(voice_val(register_cmu_us_slt(dirPath.UTF8String)),flite_voice_list);
+	flite_voice_list = val_reverse(flite_voice_list);
+
+
     return self;
+}
+
+
+// Test
+-(void) speakText2:(NSString *)text {
+	flite_text_to_speech(text.UTF8String, voice, "play");
 }
 
 -(void)speakText:(NSString *)text
@@ -149,7 +168,15 @@ cst_voice *voice;
 	}
 	else if([voicename isEqualToString:@"cmu_us_slt"]) {
 		voice = register_cmu_us_slt();
+	} else {
+		// Attemt to load from flitevox file
+		voice = flite_voice_select([NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], voicename].UTF8String);
 	}
+
+	if (voice)
+		NSLog(@"Voice: %s", voice->name);
+	else
+		voice = register_cmu_us_kal(); // Fallback to Kal
 }
 
 -(void)stopTalking
