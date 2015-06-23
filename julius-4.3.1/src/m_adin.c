@@ -64,116 +64,118 @@ adin_select(ADIn *a, int source, int dev)
     a->enable_thread 	   = FALSE;
 #endif
     break;
-#ifdef USE_MIC
-  case SP_MIC:
-    /* microphone input */
-    a->silence_cut_default = TRUE;
-    a->enable_thread 	   = TRUE;
-    switch(dev) {
-    case SP_INPUT_DEFAULT:
-      a->ad_standby 	     = adin_mic_standby;
-      a->ad_begin 	     = adin_mic_begin;
-      a->ad_end 	     = adin_mic_end;
-      a->ad_read 	     = adin_mic_read;
-      a->ad_input_name	     = adin_mic_input_name;
-      a->ad_pause	     = adin_mic_pause;
-      a->ad_terminate	     = adin_mic_terminate;
-      a->ad_resume	     = adin_mic_resume;
-      break;
-#ifdef HAS_ALSA
-    case SP_INPUT_ALSA:
-      a->ad_standby 	     = adin_alsa_standby;
-      a->ad_begin 	     = adin_alsa_begin;
-      a->ad_end 	     = adin_alsa_end;
-      a->ad_read 	     = adin_alsa_read;
-      a->ad_input_name	     = adin_alsa_input_name;
-      a->ad_pause	     = NULL;
-      a->ad_terminate	     = NULL;
-      a->ad_resume	     = NULL;
-      break;
-#endif
-#ifdef HAS_OSS
-    case SP_INPUT_OSS:
-      a->ad_standby 	     = adin_oss_standby;
-      a->ad_begin 	     = adin_oss_begin;
-      a->ad_end 	     = adin_oss_end;
-      a->ad_read 	     = adin_oss_read;
-      a->ad_input_name	     = adin_oss_input_name;
-      a->ad_pause	     = NULL;
-      a->ad_terminate	     = NULL;
-      a->ad_resume	     = NULL;
-      break;
-#endif
-#ifdef HAS_ESD
-    case SP_INPUT_ESD:
-      a->ad_standby 	     = adin_esd_standby;
-      a->ad_begin 	     = adin_esd_begin;
-      a->ad_end 	     = adin_esd_end;
-      a->ad_read 	     = adin_esd_read;
-      a->ad_input_name	     = adin_esd_input_name;
-      a->ad_pause	     = NULL;
-      a->ad_terminate	     = NULL;
-      a->ad_resume	     = NULL;
-      break;
-#endif
-#ifdef HAS_PULSEAUDIO
-    case SP_INPUT_PULSEAUDIO:
-      a->ad_standby 	     = adin_pulseaudio_standby;
-      a->ad_begin 	     = adin_pulseaudio_begin;
-      a->ad_end 	     = adin_pulseaudio_end;
-      a->ad_read 	     = adin_pulseaudio_read;
-      a->ad_input_name	     = adin_pulseaudio_input_name;
-      a->ad_pause	     = NULL;
-      a->ad_terminate	     = NULL;
-      a->ad_resume	     = NULL;
-      break;
-#endif
-    default:
-      jlog("ERROR: m_adin: invalid input device specified\n");
-    }
-    break;
-#endif
-#ifdef USE_NETAUDIO
-  case SP_NETAUDIO:
-    /* DatLink/NetAudio input */
-    a->ad_standby 	   = adin_netaudio_standby;
-    a->ad_begin 	   = adin_netaudio_begin;
-    a->ad_end 		   = adin_netaudio_end;
-    a->ad_resume 	   = NULL;
-    a->ad_pause 	   = NULL;
-    a->ad_terminate 	   = NULL;
-    a->ad_read 		   = adin_netaudio_read;
-    a->ad_input_name	   = adin_netaudio_input_name;
-    a->silence_cut_default = TRUE;
-    a->enable_thread 	   = TRUE;
-    break;
-#endif
-  case SP_ADINNET:
-    /* adinnet network input */
-    a->ad_standby 	   = adin_tcpip_standby;
-    a->ad_begin 	   = adin_tcpip_begin;
-    a->ad_end 		   = adin_tcpip_end;
-    a->ad_resume	   = adin_tcpip_send_resume;
-    a->ad_pause		   = adin_tcpip_send_pause;
-    a->ad_terminate	   = adin_tcpip_send_terminate;
-    a->ad_read 		   = adin_tcpip_read;
-    a->ad_input_name	   = adin_tcpip_input_name;
-    a->silence_cut_default = FALSE;
-    a->enable_thread 	   = FALSE;
-    break;
-  case SP_STDIN:
-    /* standard input */
-    a->ad_standby 	   = adin_stdin_standby;
-    a->ad_begin 	   = adin_stdin_begin;
-    a->ad_end 		   = NULL;
-    a->ad_resume 	   = NULL;
-    a->ad_pause 	   = NULL;
-    a->ad_terminate 	   = NULL;
-    a->ad_read 		   = adin_stdin_read;
-    a->ad_input_name	   = adin_stdin_input_name;
-    a->silence_cut_default = FALSE;
-    a->enable_thread 	   = FALSE;
-    break;
+// MITKO:: IOS PORTING
+//#ifdef USE_MIC
+//  case SP_MIC:
+//    /* microphone input */
+//    a->silence_cut_default = TRUE;
+//    a->enable_thread 	   = TRUE;
+//    switch(dev) {
+//    case SP_INPUT_DEFAULT:
+//      a->ad_standby 	     = adin_mic_standby;
+//      a->ad_begin 	     = adin_mic_begin;
+//      a->ad_end 	     = adin_mic_end;
+//      a->ad_read 	     = adin_mic_read;
+//      a->ad_input_name	     = adin_mic_input_name;
+//      a->ad_pause	     = adin_mic_pause;
+//      a->ad_terminate	     = adin_mic_terminate;
+//      a->ad_resume	     = adin_mic_resume;
+//      break;
+//#ifdef HAS_ALSA
+//    case SP_INPUT_ALSA:
+//      a->ad_standby 	     = adin_alsa_standby;
+//      a->ad_begin 	     = adin_alsa_begin;
+//      a->ad_end 	     = adin_alsa_end;
+//      a->ad_read 	     = adin_alsa_read;
+//      a->ad_input_name	     = adin_alsa_input_name;
+//      a->ad_pause	     = NULL;
+//      a->ad_terminate	     = NULL;
+//      a->ad_resume	     = NULL;
+//      break;
+//#endif
+//#ifdef HAS_OSS
+//    case SP_INPUT_OSS:
+//      a->ad_standby 	     = adin_oss_standby;
+//      a->ad_begin 	     = adin_oss_begin;
+//      a->ad_end 	     = adin_oss_end;
+//      a->ad_read 	     = adin_oss_read;
+//      a->ad_input_name	     = adin_oss_input_name;
+//      a->ad_pause	     = NULL;
+//      a->ad_terminate	     = NULL;
+//      a->ad_resume	     = NULL;
+//      break;
+//#endif
+//#ifdef HAS_ESD
+//    case SP_INPUT_ESD:
+//      a->ad_standby 	     = adin_esd_standby;
+//      a->ad_begin 	     = adin_esd_begin;
+//      a->ad_end 	     = adin_esd_end;
+//      a->ad_read 	     = adin_esd_read;
+//      a->ad_input_name	     = adin_esd_input_name;
+//      a->ad_pause	     = NULL;
+//      a->ad_terminate	     = NULL;
+//      a->ad_resume	     = NULL;
+//      break;
+//#endif
+//#ifdef HAS_PULSEAUDIO
+//    case SP_INPUT_PULSEAUDIO:
+//      a->ad_standby 	     = adin_pulseaudio_standby;
+//      a->ad_begin 	     = adin_pulseaudio_begin;
+//      a->ad_end 	     = adin_pulseaudio_end;
+//      a->ad_read 	     = adin_pulseaudio_read;
+//      a->ad_input_name	     = adin_pulseaudio_input_name;
+//      a->ad_pause	     = NULL;
+//      a->ad_terminate	     = NULL;
+//      a->ad_resume	     = NULL;
+//      break;
+//#endif
+//    default:
+//      jlog("ERROR: m_adin: invalid input device specified\n");
+//    }
+//    break;
+//#endif
+//#ifdef USE_NETAUDIO
+//  case SP_NETAUDIO:
+//    /* DatLink/NetAudio input */
+//    a->ad_standby 	   = adin_netaudio_standby;
+//    a->ad_begin 	   = adin_netaudio_begin;
+//    a->ad_end 		   = adin_netaudio_end;
+//    a->ad_resume 	   = NULL;
+//    a->ad_pause 	   = NULL;
+//    a->ad_terminate 	   = NULL;
+//    a->ad_read 		   = adin_netaudio_read;
+//    a->ad_input_name	   = adin_netaudio_input_name;
+//    a->silence_cut_default = TRUE;
+//    a->enable_thread 	   = TRUE;
+//    break;
+//#endif
+//  case SP_ADINNET:
+//    /* adinnet network input */
+//    a->ad_standby 	   = adin_tcpip_standby;
+//    a->ad_begin 	   = adin_tcpip_begin;
+//    a->ad_end 		   = adin_tcpip_end;
+//    a->ad_resume	   = adin_tcpip_send_resume;
+//    a->ad_pause		   = adin_tcpip_send_pause;
+//    a->ad_terminate	   = adin_tcpip_send_terminate;
+//    a->ad_read 		   = adin_tcpip_read;
+//    a->ad_input_name	   = adin_tcpip_input_name;
+//    a->silence_cut_default = FALSE;
+//    a->enable_thread 	   = FALSE;
+//    break;
+//  case SP_STDIN:
+//    /* standard input */
+//    a->ad_standby 	   = adin_stdin_standby;
+//    a->ad_begin 	   = adin_stdin_begin;
+//    a->ad_end 		   = NULL;
+//    a->ad_resume 	   = NULL;
+//    a->ad_pause 	   = NULL;
+//    a->ad_terminate 	   = NULL;
+//    a->ad_read 		   = adin_stdin_read;
+//    a->ad_input_name	   = adin_stdin_input_name;
+//    a->silence_cut_default = FALSE;
+//    a->enable_thread 	   = FALSE;
+//    break;
+/* MITKO:: IOS PORTING*/
   case SP_MFCFILE:
   case SP_OUTPROBFILE:
     /* MFC_FILE is not waveform, so special handling on main routine should be done */
