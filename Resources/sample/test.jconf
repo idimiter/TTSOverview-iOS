@@ -53,8 +53,8 @@
 #-input vecet			# feature / outprob vector via network client
 
 ## Raw audio input
--input mic    			# live microphone
-#-input rawfile			# wavefile
+#-input mic    			# live microphone
+-input rawfile			# wavefile
 #-input file			# (same as "rawfile")
 #-input stdin			# waveform from standard input
 #-input adinnet			# waveform via network client
@@ -214,7 +214,7 @@
 #-d binary_ngram_file		# N-gram in Julius binary format
 #-nlr ngram			# forward (left-to-right) N-gram
 #-nrl rev_ngram			# backward (right-to-left) N-gram
--v sample.dict			# word dictionary
+-v sample.jdict			# word dictionary
 ## param.
 #-silhead "<s>"			# beginning-of-sentence (silence) word
 #-siltail "</s>"		# end-of-sentence (silence) word
@@ -231,7 +231,7 @@
 #### "-gram", "-gramlist" can be used multiple times
 #-gram gramprefix		# (comma-separated list of) grammar file prefix
 #-gramlist txtfile		# text file containing grammar prefixes
--dfa sample.dfa -v sample.dict	# specify DFA and dictionary separately
+-dfa sample.dfa -v sample.jdict	# specify DFA and dictionary separately
 #-nogram			# reset all grammar list already specified
 
 ####

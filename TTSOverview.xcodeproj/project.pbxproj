@@ -151,12 +151,12 @@
 		A410AA421B395FBD0066A5FD /* ss.c in Sources */ = {isa = PBXBuildFile; fileRef = A410A9AD1B395FBD0066A5FD /* ss.c */; };
 		A410AA431B395FBD0066A5FD /* wav2mfcc-buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = A410A9AE1B395FBD0066A5FD /* wav2mfcc-buffer.c */; };
 		A410AA441B395FBD0066A5FD /* wav2mfcc-pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = A410A9AF1B395FBD0066A5FD /* wav2mfcc-pipe.c */; };
-		A410AA4D1B39624C0066A5FD /* Julius.m in Sources */ = {isa = PBXBuildFile; fileRef = A410AA4C1B39624C0066A5FD /* Julius.m */; };
+		A410AA4D1B39624C0066A5FD /* JuliusCSR.m in Sources */ = {isa = PBXBuildFile; fileRef = A410AA4C1B39624C0066A5FD /* JuliusCSR.m */; };
 		A410AA511B39625F0066A5FD /* FliteTTS.m in Sources */ = {isa = PBXBuildFile; fileRef = A410AA501B39625F0066A5FD /* FliteTTS.m */; };
 		A410AA531B3962AB0066A5FD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A410AA521B3962AB0066A5FD /* libz.dylib */; };
 		A410AA5D1B396D930066A5FD /* hmmdefs in Resources */ = {isa = PBXBuildFile; fileRef = A410AA551B396D930066A5FD /* hmmdefs */; };
 		A410AA5E1B396D930066A5FD /* sample.dfa in Resources */ = {isa = PBXBuildFile; fileRef = A410AA561B396D930066A5FD /* sample.dfa */; };
-		A410AA5F1B396D930066A5FD /* sample.dict in Resources */ = {isa = PBXBuildFile; fileRef = A410AA571B396D930066A5FD /* sample.dict */; };
+		A410AA5F1B396D930066A5FD /* sample.jdict in Resources */ = {isa = PBXBuildFile; fileRef = A410AA571B396D930066A5FD /* sample.jdict */; };
 		A410AA601B396D930066A5FD /* sample.grammar in Resources */ = {isa = PBXBuildFile; fileRef = A410AA581B396D930066A5FD /* sample.grammar */; };
 		A410AA611B396D930066A5FD /* sample.term in Resources */ = {isa = PBXBuildFile; fileRef = A410AA591B396D930066A5FD /* sample.term */; };
 		A410AA621B396D930066A5FD /* sample.voca in Resources */ = {isa = PBXBuildFile; fileRef = A410AA5A1B396D930066A5FD /* sample.voca */; };
@@ -165,6 +165,7 @@
 		B5122F101B383CD700746166 /* cmu_us_fem.flitevox in Resources */ = {isa = PBXBuildFile; fileRef = B5122F0F1B383CD700746166 /* cmu_us_fem.flitevox */; };
 		B5122F121B3862F700746166 /* cmu_us_clb.flitevox in Resources */ = {isa = PBXBuildFile; fileRef = B5122F111B38607B00746166 /* cmu_us_clb.flitevox */; };
 		B5122F141B38632F00746166 /* cmu_us_awb.flitevox in Resources */ = {isa = PBXBuildFile; fileRef = B5122F131B38632F00746166 /* cmu_us_awb.flitevox */; };
+		B5122F341B39907E00746166 /* DDActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5122F331B39907E00746166 /* DDActivityView.m */; };
 		B56BC3761B38305400542D0C /* au_none.c in Sources */ = {isa = PBXBuildFile; fileRef = B56BC28A1B38305400542D0C /* au_none.c */; };
 		B56BC37A1B38305400542D0C /* au_streaming.c in Sources */ = {isa = PBXBuildFile; fileRef = B56BC28E1B38305400542D0C /* au_streaming.c */; };
 		B56BC37E1B38305400542D0C /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = B56BC2921B38305400542D0C /* audio.c */; };
@@ -499,14 +500,14 @@
 		A410A9AD1B395FBD0066A5FD /* ss.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ss.c; sourceTree = "<group>"; };
 		A410A9AE1B395FBD0066A5FD /* wav2mfcc-buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "wav2mfcc-buffer.c"; sourceTree = "<group>"; };
 		A410A9AF1B395FBD0066A5FD /* wav2mfcc-pipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "wav2mfcc-pipe.c"; sourceTree = "<group>"; };
-		A410AA4B1B39624C0066A5FD /* Julius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Julius.h; sourceTree = "<group>"; };
-		A410AA4C1B39624C0066A5FD /* Julius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Julius.m; sourceTree = "<group>"; };
+		A410AA4B1B39624C0066A5FD /* JuliusCSR .h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JuliusCSR .h"; sourceTree = "<group>"; };
+		A410AA4C1B39624C0066A5FD /* JuliusCSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuliusCSR.m; sourceTree = "<group>"; };
 		A410AA4F1B39625F0066A5FD /* FliteTTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FliteTTS.h; sourceTree = "<group>"; };
 		A410AA501B39625F0066A5FD /* FliteTTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FliteTTS.m; sourceTree = "<group>"; };
 		A410AA521B3962AB0066A5FD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A410AA551B396D930066A5FD /* hmmdefs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hmmdefs; sourceTree = "<group>"; };
 		A410AA561B396D930066A5FD /* sample.dfa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.dfa; sourceTree = "<group>"; };
-		A410AA571B396D930066A5FD /* sample.dict */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = sample.dict; sourceTree = "<group>"; };
+		A410AA571B396D930066A5FD /* sample.jdict */ = {isa = PBXFileReference; lastKnownFileType = text; path = sample.jdict; sourceTree = "<group>"; };
 		A410AA581B396D930066A5FD /* sample.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.grammar; sourceTree = "<group>"; };
 		A410AA591B396D930066A5FD /* sample.term */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.term; sourceTree = "<group>"; };
 		A410AA5A1B396D930066A5FD /* sample.voca */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.voca; sourceTree = "<group>"; };
@@ -515,6 +516,8 @@
 		B5122F0F1B383CD700746166 /* cmu_us_fem.flitevox */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmu_us_fem.flitevox; sourceTree = "<group>"; };
 		B5122F111B38607B00746166 /* cmu_us_clb.flitevox */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmu_us_clb.flitevox; sourceTree = "<group>"; };
 		B5122F131B38632F00746166 /* cmu_us_awb.flitevox */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmu_us_awb.flitevox; sourceTree = "<group>"; };
+		B5122F321B39907E00746166 /* DDActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDActivityView.h; sourceTree = "<group>"; };
+		B5122F331B39907E00746166 /* DDActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDActivityView.m; sourceTree = "<group>"; };
 		B56BC2561B38305400542D0C /* cst_alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cst_alloc.h; sourceTree = "<group>"; };
 		B56BC2571B38305400542D0C /* cst_args.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cst_args.h; sourceTree = "<group>"; };
 		B56BC2581B38305400542D0C /* cst_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cst_audio.h; sourceTree = "<group>"; };
@@ -809,6 +812,8 @@
 				82DFD7E7139894DA002DEF64 /* TTSOverviewViewController.h */,
 				82DFD7E8139894DA002DEF64 /* TTSOverviewViewController.m */,
 				82DFD7EA139894DA002DEF64 /* TTSOverviewViewController.xib */,
+				B5122F321B39907E00746166 /* DDActivityView.h */,
+				B5122F331B39907E00746166 /* DDActivityView.m */,
 			);
 			name = Classes;
 			path = TTSOverview;
@@ -1145,8 +1150,8 @@
 		A410AA4A1B39624C0066A5FD /* Julius */ = {
 			isa = PBXGroup;
 			children = (
-				A410AA4B1B39624C0066A5FD /* Julius.h */,
-				A410AA4C1B39624C0066A5FD /* Julius.m */,
+				A410AA4B1B39624C0066A5FD /* JuliusCSR .h */,
+				A410AA4C1B39624C0066A5FD /* JuliusCSR.m */,
 			);
 			path = Julius;
 			sourceTree = "<group>";
@@ -1165,7 +1170,7 @@
 			children = (
 				A410AA551B396D930066A5FD /* hmmdefs */,
 				A410AA561B396D930066A5FD /* sample.dfa */,
-				A410AA571B396D930066A5FD /* sample.dict */,
+				A410AA571B396D930066A5FD /* sample.jdict */,
 				A410AA581B396D930066A5FD /* sample.grammar */,
 				A410AA591B396D930066A5FD /* sample.term */,
 				A410AA5A1B396D930066A5FD /* sample.voca */,
@@ -1601,7 +1606,7 @@
 				B56BC4251B38305400542D0C /* us_pos.tree in Resources */,
 				A410AA5D1B396D930066A5FD /* hmmdefs in Resources */,
 				82DFD7DD139894DA002DEF64 /* InfoPlist.strings in Resources */,
-				A410AA5F1B396D930066A5FD /* sample.dict in Resources */,
+				A410AA5F1B396D930066A5FD /* sample.jdict in Resources */,
 				A410AA611B396D930066A5FD /* sample.term in Resources */,
 				B5122F101B383CD700746166 /* cmu_us_fem.flitevox in Resources */,
 				A410AA641B396D930066A5FD /* tiedlist in Resources */,
@@ -1715,6 +1720,7 @@
 				B56BC3B41B38305400542D0C /* cst_voice.c in Sources */,
 				A410A8C01B395E8A0066A5FD /* search_bestfirst_main.c in Sources */,
 				A410AA431B395FBD0066A5FD /* wav2mfcc-buffer.c in Sources */,
+				B5122F341B39907E00746166 /* DDActivityView.m in Sources */,
 				A410AA051B395FBD0066A5FD /* rdhmmdef.c in Sources */,
 				B56BC3AE1B38305400542D0C /* cst_utterance.c in Sources */,
 				A410A8B61B395E8A0066A5FD /* m_options.c in Sources */,
@@ -1764,7 +1770,7 @@
 				B56BC4081B38305400542D0C /* cmu_lex_data.c in Sources */,
 				A410AA341B395FBD0066A5FD /* mymalloc.c in Sources */,
 				A410AA351B395FBD0066A5FD /* mystrtok.c in Sources */,
-				A410AA4D1B39624C0066A5FD /* Julius.m in Sources */,
+				A410AA4D1B39624C0066A5FD /* JuliusCSR.m in Sources */,
 				B56BC41A1B38305400542D0C /* us_durz_cart.c in Sources */,
 				A410A9FC1B395FBD0066A5FD /* cdhmm.c in Sources */,
 				A410A8C31B395E8A0066A5FD /* spsegment.c in Sources */,
