@@ -2,6 +2,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TTSOverviewViewController.h"
 #import "FliteTTS.h"
+#import "Julius.h"
 
 @implementation TTSOverviewViewController
 
