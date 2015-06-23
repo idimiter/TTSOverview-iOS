@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1730ACC3-7F34-44CA-8515-519F51C79F5B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TTSOverview</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F8D5FDA01A027CC071957CCCC9C5D1FD28AC04FE</key>
 		<string>github.com:idimiter/TTSOverview-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TTSOverview.xcodeproj/project.xcworkspace</string>
+	<string>TTSOverview.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F8D5FDA01A027CC071957CCCC9C5D1FD28AC04FE</key>

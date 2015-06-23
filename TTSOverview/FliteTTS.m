@@ -29,6 +29,7 @@
 #import "FliteTTS.h"
 #import "flite.h"
 #include "usenglish.h"
+#include "cmu_indic_lang.h"
 
 cst_voice *register_cmu_us_kal();
 cst_voice *register_cmu_us_kal16();
@@ -39,6 +40,7 @@ cst_wave *sound;
 cst_voice *voice;
 
 cst_lexicon *cmulex_init(void);
+cst_lexicon *cmu_indic_lex_init(void);
 
 @implementation FliteTTS
 
@@ -71,7 +73,10 @@ cst_lexicon *cmulex_init(void);
 
 	// For flitevox files
 	NSString* dirPath = [[NSBundle mainBundle] resourcePath];
+
 	flite_add_lang("eng", usenglish_init, cmulex_init);
+	flite_add_lang("cmu_indic_lang",cmu_indic_lang_init, cmu_indic_lex_init);
+
 	flite_voice_list = cons_val(voice_val(register_cmu_us_slt(dirPath.UTF8String)),flite_voice_list);
 	flite_voice_list = val_reverse(flite_voice_list);
 
@@ -104,7 +109,6 @@ cst_lexicon *cmulex_init(void);
 		cleanString = [NSMutableString stringWithString:@""];
 	}
 	sound = flite_text_to_wave([cleanString UTF8String], voice);
-	
 	
 	/*
 	// copy sound into soundObj -- doesn't yet work -- can anyone help fix this?
@@ -173,10 +177,10 @@ cst_lexicon *cmulex_init(void);
 		voice = flite_voice_select([NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], voicename].UTF8String);
 	}
 
-	if (voice)
-		NSLog(@"Voice: %s", voice->name);
-	else
+	if (!voice)
 		voice = register_cmu_us_kal(); // Fallback to Kal
+
+	NSLog(@"Voice changed: %s", voice->name);
 }
 
 -(void)stopTalking

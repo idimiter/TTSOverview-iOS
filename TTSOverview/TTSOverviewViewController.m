@@ -76,13 +76,7 @@
 	[pickerView setDelegate:self];
 	[pickerView setShowsSelectionIndicator:YES];
 	[pickerView selectRow:selectedVoiceIndex inComponent:0 animated:NO];
-/*
-	//expand the action sheet
-	CGRect rect = popup.frame;
-	rect.size.height += 320;
-	rect.origin.y -= 100;
-	popup.frame = rect;
-*/
+
 	[popup setBounds:CGRectMake(0, 0, 320, 460)];
 
 	//Displace all buttons
@@ -125,11 +119,8 @@
 
 #pragma mark UIPickerViewDelegate methods
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-	NSLog(@"Selected %d: %@", row, [voicesArray objectAtIndex:row]);
 	selectedVoiceIndex = row;
 	[_fliteEngine setVoice:[voicesArray objectAtIndex:row]];
-
-//	[pickerView removeFromSuperview];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
@@ -142,8 +133,6 @@
 
 #pragma mark UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
-	NSLog(@"Button %d", buttonIndex);
-
 	[popup dismissWithClickedButtonIndex:buttonIndex animated:YES];
 }
 
